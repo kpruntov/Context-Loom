@@ -1,8 +1,3 @@
----
-title: Introduction
-description: ContextLoom System Overview
----
-
 # ContextLoom System Overview
 
 **Version:** 3.0.0
