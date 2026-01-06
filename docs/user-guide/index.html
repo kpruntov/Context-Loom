@@ -87,7 +87,7 @@
 <div class="sl-heading-wrapper level-h2"><h2 id="2-connecting-repositories">2. Connecting Repositories</h2><a class="sl-anchor-link" href="#2-connecting-repositories"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only">Section titled “2. Connecting Repositories”</span></a></div>
 <p>Before you can create bundles, you must connect your VCS providers.</p>
 <ol>
-<li>Navigate to <strong>Settings > Repositories</strong>.</li>
+<li>Navigate to <strong>Sidebar > Repositories</strong>.</li>
 <li>Click <strong>Connect Repository</strong>.</li>
 <li>Select your provider:
 <ul>
@@ -103,6 +103,8 @@
 <p>The <strong>Bundle Curator</strong> is the main interface for defining context. It is divided into two panes.</p>
 <div class="sl-heading-wrapper level-h3"><h3 id="left-pane-source-browser">Left Pane: Source Browser</h3><a class="sl-anchor-link" href="#left-pane-source-browser"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only">Section titled “Left Pane: Source Browser”</span></a></div>
 <ul>
+<li><strong>Bundle Name:</strong> Select a name for your bundle</li>
+<li><strong>Token Estimator:</strong> The bar at the bottom estimates the size of your bundle.</li>
 <li><strong>Repo Selector:</strong> Choose which repository to browse.</li>
 <li><strong>File Tree:</strong> Navigate the directory structure.
 <ul>
@@ -116,7 +118,8 @@
 <p>This list shows exactly what the AI will see.</p>
 <ul>
 <li><strong>Remove:</strong> Click the trash icon to remove a file from the context.</li>
-<li><strong>Token Estimator:</strong> The bar at the bottom estimates the size of your bundle.</li>
+<li><strong>Description:</strong> Place the description of your bundle. Avaliable for AI agents and human for searching.</li>
+<li><strong>System Instruction:</strong> A natural language directive telling the AI how to interpret these files (e.g., “Act as a Security Auditor reviewing this authentication logic.”).</li>
 </ul>
 <div class="sl-heading-wrapper level-h3"><h3 id="pinning-strategy-versioning">Pinning Strategy (Versioning)</h3><a class="sl-anchor-link" href="#pinning-strategy-versioning"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only">Section titled “Pinning Strategy (Versioning)”</span></a></div>
 <p>At the top right, you will see the <strong>Version Mode</strong> toggle:</p>
@@ -144,13 +147,21 @@
 <blockquote>
 <p>“Review the authentication logic. Use context: @ContextLoom/Billing Logic v1”</p>
 </blockquote>
+<p>Or</p>
+<blockquote>
+<p>“Build-up context using MCP cl://bundles/550e8400-e29b…”</p>
+</blockquote>
+<p>You can also use prompt mcp tool <code dir="auto">/get_context</code></p>
+<blockquote>
+<p>/get_context cl://bundles/550e8400-e29b…</p>
+</blockquote>
 <p><em>Note: The exact syntax depends on the client integration. Some clients allow you to select “ContextLoom” from a tool menu.</em></p>
 <hr>
 <div class="sl-heading-wrapper level-h2"><h2 id="5-user-settings--access">5. User Settings &#x26; Access</h2><a class="sl-anchor-link" href="#5-user-settings--access"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only">Section titled “5. User Settings &#x26; Access”</span></a></div>
 <div class="sl-heading-wrapper level-h3"><h3 id="personal-access-tokens-pats">Personal Access Tokens (PATs)</h3><a class="sl-anchor-link" href="#personal-access-tokens-pats"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only">Section titled “Personal Access Tokens (PATs)”</span></a></div>
 <p>To connect your local tools (Claude/Cursor) to the ContextLoom Appliance, you need an API Key.</p>
 <ol>
-<li>Go to <strong>Settings > Access Tokens</strong>.</li>
+<li>Go to <strong>Sidebar > Access Tokens</strong>.</li>
 <li>Click <strong>Generate Token</strong>.</li>
 <li>Give it a name (e.g., “MacBook Pro”).</li>
 <li><strong>Copy the token immediately.</strong> It will not be shown again.</li>
@@ -158,8 +169,7 @@
 <div class="sl-heading-wrapper level-h3"><h3 id="switching-organizations">Switching Organizations</h3><a class="sl-anchor-link" href="#switching-organizations"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only">Section titled “Switching Organizations”</span></a></div>
 <p>If you belong to multiple organizations (e.g., “Frontend Team” and “Backend Team”):</p>
 <ol>
-<li>Click your profile icon in the top right.</li>
-<li>Select <strong>Switch Organization</strong>.</li>
+<li>Click organization toggler in the top left of the Sidebar</li>
 <li>Choose the context you wish to work in.
 <ul>
 <li><em>Note:</em> Bundles created in one organization are <strong>invisible</strong> to the other.</li>
