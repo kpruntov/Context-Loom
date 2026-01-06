@@ -1,0 +1,22 @@
+# Caddyfile for ContextLoom Appliance
+
+# Option 1: Automatic HTTPS (Public Domain)
+# If you have a domain like "loom.example.com" pointing to this server,
+# uncomment the line below and replace with your domain.
+# loom.example.com {
+#     reverse_proxy contextloom:8000
+# }
+
+# Option 2: Internal/Self-Signed HTTPS (IP Address or Local Hostname)
+# This uses Caddy's internal CA to issue a self-signed cert.
+# Clients (browsers/MCP) will see a warning unless they trust the root CA.
+:443 {
+    reverse_proxy contextloom:8000
+    tls internal
+}
+
+# Option 3: HTTP (Port 80)
+# Redirects automatically to HTTPS usually, but explicit listening:
+:80 {
+    reverse_proxy contextloom:8000
+}

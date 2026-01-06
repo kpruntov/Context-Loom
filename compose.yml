@@ -1,0 +1,57 @@
+version: '3.8'
+
+# This file is a template for deploying the ContextLoom appliance.
+# It assumes you are bringing your own database (BYODB).
+volumes:
+  contextloom_db_data:
+  caddy_data:
+  caddy_config:
+
+services:
+  contextloom:
+    image: ghcr.io/kpruntov/contextloom:latest # Replace with your specific image tag if needed
+    container_name: contextloom-appliance
+    restart: always
+    env_file:
+      - .env
+    # Port 8000 is now internal only, accessed via the Proxy service.
+    # If you remove the proxy, uncomment the ports below.
+    # ports:
+    #   - "8000:8000"
+
+    # Uncomment it if you will use fresh db from db service
+    # depends_on:
+    #  - db
+    # volumes:
+      # [Optional] Custom CA Bundle for Intranet Link
+      # - ./certs/corporate-ca.crt:/app/certs/custom-ca.crt:ro
+    # extra_hosts:
+      # [Optional] DNS resolution for internal services if needed
+      # - "gitlab.internal:10.10.1.5"
+  
+  # Uncomment if you do not have database. 
+  # Do not forget to uncomment dependancy in contextloom service
+  # Database (Stable)
+  # db:
+  #   image: docker.io/library/postgres:15-alpine
+  #   environment:
+  #     POSTGRES_USER: cl_admin
+  #     POSTGRES_PASSWORD: 08v65u8jY#
+  #     POSTGRES_DB: contextloom_db
+  #   ports:
+  #     - "127.0.0.1:5432:5432"
+  #   volumes:
+  #     - contextloom_db_data:/var/lib/postgresql/data
+
+  proxy:
+    image: docker.io/library/caddy:alpine
+    restart: always
+    ports:
+      - "${HTTP_PORT:-80}:80"
+      - "${HTTPS_PORT:-443}:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - contextloom
